@@ -1,0 +1,60 @@
+   
+    //  APEX CODE CREATES INNER CLASS
+    
+    list <multipleWorkers> actualWorkers;    
+    
+    public list <multipleWorkers> getActualWorkers() {
+        
+        return actualWorkers;
+    }
+    
+    //  THIS INNER CLASS TO HOLD EMPLOYEE DETAILS 
+    
+    public class multipleWorkers {
+        
+        private vanaHCM__worker_sub__c employ;
+        
+        public multipleWorkers (vanaHCM__worker_sub__c aWorker) {
+            
+            this.employ = aWorker;          
+            
+        }
+        
+        public string recid {
+            
+            get {return employ.id;}
+            
+        }
+        
+        public string employeename {
+            
+            get {return employ.vanaHCM__first_name__c + ' ' + employ.vanaHCM__last_name__c ;}
+            
+        } 
+        
+        public string qsacid {
+            get {return employ.QSAC_Employee_ID__c;}
+        }
+        
+        public boolean sel { get; set; }
+        
+    }
+    
+    
+    
+    //    INVOCATION OF INNER CLASS IN AN ACTION METHOD 
+    
+    
+    if (actualWorkers == null) {
+        
+        actualWorkers = new list <MultipleWorkers>();
+        
+        for (vanaHCM__worker_sub__c employ : many) {
+            
+            actualWorkers.add(new multipleWorkers(employ));
+        }
+    }
+    
+    
+    
+    
