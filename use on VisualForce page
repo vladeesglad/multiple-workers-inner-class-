@@ -1,0 +1,34 @@
+  <!--          
+            
+            <apex:pageBlockSection id="mpltable" title="Select from these Workers" rendered="{!showWorkerTable}">
+                
+                <apex:pageBlockTable value="{!actualworkers}" var="mp"
+                                     columns="4" rendered="{!showWorkerTable}">
+                    <apex:column >
+                    <apex:facet name="header">NAME</apex:facet>
+                        {!mp.employeename}
+                    </apex:column>
+                    
+                    <apex:column >
+                    <apex:facet name="header">QSAC ID</apex:facet>
+                        {!mp.qsacid}
+                    </apex:column>                    
+                    
+                    <apex:column >
+                    <apex:facet name="header">SELECT</apex:facet>
+                        
+                        <apex:inputCheckbox value="{!mp.sel}"/>                 
+
+                    </apex:column>                      
+                    
+                    
+                    <apex:outputText value="{!mp.recid}" rendered="false"/>
+
+                    
+                </apex:pageBlockTable>
+                
+                <apex:commandButton style="align:right;width:15%" value="NEXT" action="{!selectWorker}"/>
+                
+            </apex:pageBlockSection>
+            
+            -->
